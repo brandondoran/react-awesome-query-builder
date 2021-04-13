@@ -1,17 +1,33 @@
-export default 
+export default
 {
   "and": [
     {
       "==": [
         {
-          "var": "user.login"
+          "var": "user.loggedIn"
+        },
+        true
+      ]
+    },
+    {
+      "==": [
+        {
+          "var": "user.hasPurchasedOrder"
+        },
+        false
+      ]
+    },
+    {
+      "some": [
+        {
+          "var": "user.promotionalOffers"
         },
         {
-          "method": [
+          "==": [
             {
-              "var": "user.firstName"
+              "var": "userSegment"
             },
-            "toLowerCase"
+            "spring_sale_np"
           ]
         }
       ]
@@ -19,17 +35,9 @@ export default
     {
       "==": [
         {
-          "var": "stock"
+          "var": "split.pwa_cms_rollout"
         },
-        false
-      ]
-    },
-    {
-      "==": [
-        {
-          "var": "slider"
-        },
-        35
+        "on"
       ]
     }
   ]
