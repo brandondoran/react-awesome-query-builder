@@ -3,7 +3,7 @@ import merge from "lodash/merge";
 import {
   BasicConfig,
   // types:
-  Operators, Widgets, Fields, Config, Types, Conjunctions, Settings, LocaleSettings, OperatorProximity, Funcs, 
+  Operators, Widgets, Fields, Config, Types, Conjunctions, Settings, LocaleSettings, OperatorProximity, Funcs,
   DateTimeFieldSettings,
 } from "react-awesome-query-builder";
 import moment from "moment";
@@ -216,6 +216,11 @@ export default (skin) => {
   //////////////////////////////////////////////////////////////////////
 
   const fields: Fields = {
+    datetime: {
+      label: "DateTime",
+      type: "datetime",
+      valueSources: ["value"]
+    },
     split: {
       label: "Split fields",
       type: "!struct",
